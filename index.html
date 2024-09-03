@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGPA Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h2>CGPA Calculator</h2>
-    <div id="box1">
-        <div class="course">
+    <div id="Box1">
+        <div class="course" id="course1">
             <label for="grade1">Grade:</label>
             <select id="grade1" class="grade">
                 <option value="10">S</option>
@@ -31,4 +32,10 @@
     </div>
 
     <button onclick="addCourse()"> + </button>
-    <button class="calculate-btn" onclick="calcCGPA()">Calculate CGPA</button>
+    <button class="calculate-btn" onclick="calc()">Calculate CGPA</button>
+
+    <div id="result"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
