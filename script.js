@@ -1,44 +1,44 @@
 function Input_data() {
-    var grade =document.getElementById('Box1').value;
-    var cred = parseInt(document.getElementById('Box2').value);
+    var grade = document.getElementById('grade1').value;
+    var cred = parseInt(document.getElementById('credit1').value);
 
-    if (grade =="") {
+    if (grade == "") {
         alert("Please fill the grade");
-    return false;
-        }else if(isNaN(cred)|| cred< 0||cred>4){
-            alert("Please enter valid credit");
-            return false;
-        }else {
+        return false;
+    } else if ( cred == 0 ) {
+        alert("Please enter the credit");
+        return false;
+    } else {
         calc(grade, cred);
     }
-    }
+}
 
-    // function calc() {
-    //     let totalCGPA = 0;
-    //     let totalCredits = 0;
-    
-    //     for (let i = 1; i <= courseCount; i++) {
-    //         const gradeValue = parseFloat(document.getElementById(`grade{i}`).value);
-    //         const creditValue = parseFloat(document.getElementById(`credit{i}`).value);
-    //  }
-    // Try this... have not confirmed yet... use const to get id not var 
+// function calc() {
+//     let totalCGPA = 0;
+//     let totalCredits = 0;
 
-    // i removed <script> idk kyu
-function calc(grade,cred) {  
+//     for (let i = 1; i <= courseCount; i++) {
+//         const gradeValue = parseFloat(document.getElementById(`grade{i}`).value);
+//         const creditValue = parseFloat(document.getElementById(`credit{i}`).value);
+//  }
+// Try this... have not confirmed yet... use const to get id not var 
+
+// i removed <script> idk kyu
+function calc(grade, cred) {
     var total_cgpa = 0;
-    var total_credit=0;
+    var total_credit = 0;
 
-    if (grade == "S") {
+    if (grade == "10") {
         total_cgpa += 10 * cred;
-    } else if (grade == "A") {
+    } else if (grade == "9") {
         total_cgpa += 9 * cred;
-    } else if (grade == "B") {
+    } else if (grade == "8") {
         total_cgpa += 8 * cred;
-    } else if (grade == "C") {
+    } else if (grade == "7") {
         total_cgpa += 7 * cred;
-    } else if (grade == "D") {
+    } else if (grade == "6") {
         total_cgpa += 6 * cred;
-    } else if (grade == "E") {
+    } else if (grade == "5") {
         total_cgpa += 5 * cred;
     } else {
         total_cgpa += 0;
@@ -46,6 +46,6 @@ function calc(grade,cred) {
 
     total_credit += cred;
     var cgpa = total_cgpa / total_credit;
-    
-    document.getElementById('Box3').innerHtml = "Your CGPA is:"+cgpa.toFixed(2);
+
+    document.getElementById('result').innerHtml = "Your CGPA is:" + cgpa.toFixed(2);
 }
