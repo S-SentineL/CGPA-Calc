@@ -17,7 +17,7 @@ function Input_data() {
 //     let totalCGPA = 0;
 //     let totalCredits = 0;
 
-//     for (let i = 1; i <= courseCount; i++) {
+//     for (let i = 1; i <= coursenum; i++) {
 //         const gradeValue = parseFloat(document.getElementById(`grade{i}`).value);
 //         const creditValue = parseFloat(document.getElementById(`credit{i}`).value);
 //  }
@@ -48,4 +48,24 @@ function calc(grade, cred) {
     var cgpa = total_cgpa / total_credit;
 
     document.getElementById('result').innerHtml = "Your CGPA is:" + cgpa.toFixed(2);
+    
+    document.getElementById('Box3').innerHtml = "Your CGPA is:"+cgpa.toFixed(2);
+}
+
+let coursenum = 1
+function addCourse() {
+    coursenum++;
+    const c1 = document.getElementById("course1");
+    const newCourse = c1.cloneNode(true);
+    newCourse.id = `course${coursenum}`;
+
+    const cSel = newCourse.querySelector('.credit');
+    const gSel = newCourse.querySelector('.grade');
+    cSel.id = `credit${coursenum}`;
+    gSel.id = `grade${coursenum}`;
+
+    cSel.selectedIndex = 0;
+    gSel.selectedIndex = 0;
+
+    document.getElementById('Box1').appendChild(newCourse);
 }

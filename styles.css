@@ -27,6 +27,7 @@ h2 {
     justify-content: space-between;
     margin-bottom: 10px;
     margin-top: 10px;
+    padding-bottom: 10px;
 }
 
 
@@ -72,4 +73,8 @@ button:hover {
 
 .calculate-btn:hover {
     background-color: #328732;
+}
+
+#result{
+    border: #000102;
 }
