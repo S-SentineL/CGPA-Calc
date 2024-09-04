@@ -13,43 +13,32 @@ function Input_data() {
     }
 }
 
-// function calc() {
-//     let totalCGPA = 0;
-//     let totalCredits = 0;
-
-//     for (let i = 1; i <= coursenum; i++) {
-//         const gradeValue = parseFloat(document.getElementById(`grade{i}`).value);
-//         const creditValue = parseFloat(document.getElementById(`credit{i}`).value);
-//  }
-// Try this... have not confirmed yet... use const to get id not var 
-
-// i removed <script> idk kyu
 function calc(grade, cred) {
-    var total_cgpa = 0;
-    var total_credit = 0;
+    let total_cgpa = 0;
+    let total_credit = 0;
 
-    if (grade == "10") {
-        total_cgpa += 10 * cred;
-    } else if (grade == "9") {
-        total_cgpa += 9 * cred;
-    } else if (grade == "8") {
-        total_cgpa += 8 * cred;
-    } else if (grade == "7") {
-        total_cgpa += 7 * cred;
-    } else if (grade == "6") {
-        total_cgpa += 6 * cred;
-    } else if (grade == "5") {
-        total_cgpa += 5 * cred;
-    } else {
-        total_cgpa += 0;
+    for (let i = 1; i <= coursenum; i++) {
+        if (grade == "10") {
+            total_cgpa += 10 * cred;
+        } else if (grade == "9") {
+            total_cgpa += 9 * cred;
+        } else if (grade == "8") {
+            total_cgpa += 8 * cred;
+        } else if (grade == "7") {
+            total_cgpa += 7 * cred;
+        } else if (grade == "6") {
+            total_cgpa += 6 * cred;
+        } else if (grade == "5") {
+            total_cgpa += 5 * cred;
+        } else {
+            total_cgpa += 0;
+        }
     }
-
     total_credit += cred;
     var cgpa = total_cgpa / total_credit;
 
     document.getElementById('result').innerHtml = "Your CGPA is:" + cgpa.toFixed(2);
     
-    document.getElementById('Box3').innerHtml = "Your CGPA is:"+cgpa.toFixed(2);
 }
 
 let coursenum = 1
