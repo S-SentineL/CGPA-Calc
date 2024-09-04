@@ -3,6 +3,9 @@ body {
     margin: 20px;
     background-color: white;
     color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h2 {
