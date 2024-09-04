@@ -1,42 +1,30 @@
 function Input_data() {
-    var grade = document.getElementById('grade1').value;
-    var cred = parseInt(document.getElementById('credit1').value);
-    calc(grade, cred);
+    calc();
 }
 
-function calc(grade, cred) {
-    if (grade === 'NA') {
-        alert("Please fill the grade");
-        return false;
-    } else if (cred === 'NA') {
-        alert("Please enter the credit");
-        return false;
-    }
-    
+function calc() {
     let total_cgpa = 0;
     let total_credit = 0;
 
     for (let i = 1; i <= coursenum; i++) {
-        if (grade == "10") {
-            total_cgpa += 10 * cred;
-        } else if (grade == "9") {
-            total_cgpa += 9 * cred;
-        } else if (grade == "8") {
-            total_cgpa += 8 * cred;
-        } else if (grade == "7") {
-            total_cgpa += 7 * cred;
-        } else if (grade == "6") {
-            total_cgpa += 6 * cred;
-        } else if (grade == "5") {
-            total_cgpa += 5 * cred;
-        } else {
-            total_cgpa += 0;
-        }
-    }
-    total_credit += cred;
-    var cgpa = total_cgpa / total_credit;
+        const grade = document.getElementById(`grade${i}`).value;
+        const cred = parseInt(document.getElementById(`credit${i}`).value);
 
-    document.getElementById('result').innerHtml = "Your CGPA is:" + cgpa.toFixed(2);
+        if (grade === 'NA') {
+            alert(`Please fill in the grade for course ${i}`);
+            return false;
+        } else if (cred === 0) {
+            alert(`Please enter the credit for course ${i}`);
+            return false;
+        }
+
+        total_cgpa += parseInt(grade) * cred;
+        total_credit += cred;
+    }
+    
+    const cgpa = total_cgpa / total_credit;
+
+    document.getElementById('result').innerHTML = "Your CGPA is:" + cgpa.toFixed(2);
     
 }
 
