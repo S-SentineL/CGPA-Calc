@@ -58,3 +58,11 @@ function addCourse() {
 
     document.getElementById('Box1').appendChild(newCourse);
 }
+
+function subCourse(){
+    if (coursenum>1){
+        const last = document.getElementById(`course${coursenum}`)
+        last.remove()
+        coursenum--;
+    }
+}
