@@ -2,7 +2,7 @@ function Input_data() {
     var grade = document.getElementById('grade1').value;
     var cred = parseInt(document.getElementById('credit1').value);
 
-    if (grade == "") {
+    if (grade == 0) {
         alert("Please fill the grade");
         return false;
     } else if ( cred == 0 ) {
