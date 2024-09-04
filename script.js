@@ -43,6 +43,10 @@ function calc(grade, cred) {
 
 let coursenum = 1
 function addCourse() {
+    if (coursenum >= 10) {
+        alert("Please fill up to 10 subjects!");
+        return;
+    }
     coursenum++;
     const c1 = document.getElementById("course1");
     const newCourse = c1.cloneNode(true);
@@ -66,3 +70,21 @@ function subCourse(){
         coursenum--;
     }
 }
+
+
+document.addEventListener('keydown', event => {
+    const key = event.key;
+
+    if (key === 'Enter') { 
+        calc();
+    } 
+    
+    else if (key === 'Backspace') {
+        subCourse();
+    }
+
+    else if (key === 'ArrowDown') {
+        addCourse();
+    }
+
+});

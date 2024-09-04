@@ -11,6 +11,7 @@ body {
     height: 100vh;
     position: relative;
     padding-top: 20px;
+    overflow: hidden;
 }
 
 h2 {
@@ -24,7 +25,7 @@ h2 {
 #Box1 {
     width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
     background-color: whitesmoke;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -61,7 +62,7 @@ select {
 button {
     display: block;
     width: 150px;
-    margin: 10px auto;
+    margin: 15px auto;
     padding: 4px;
     font-size: 30px;
     color: #fff;
