@@ -1,19 +1,18 @@
 function Input_data() {
     var grade = document.getElementById('grade1').value;
     var cred = parseInt(document.getElementById('credit1').value);
-
-    if (grade == 0) {
-        alert("Please fill the grade");
-        return false;
-    } else if ( cred == 0 ) {
-        alert("Please enter the credit");
-        return false;
-    } else {
-        calc(grade, cred);
-    }
+    calc(grade, cred);
 }
 
 function calc(grade, cred) {
+    if (grade === 'NA') {
+        alert("Please fill the grade");
+        return false;
+    } else if (cred === 'NA') {
+        alert("Please enter the credit");
+        return false;
+    }
+    
     let total_cgpa = 0;
     let total_credit = 0;
 
@@ -76,7 +75,7 @@ document.addEventListener('keydown', event => {
     const key = event.key;
 
     if (key === 'Enter') { 
-        calc();
+        Input_data();
     } 
     
     else if (key === 'Backspace') {
