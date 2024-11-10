@@ -10,8 +10,9 @@ A simple CGPA calculator application that helps you calculate your CGPA based on
 
 ## Technologies Used
 
-- **React**: For building an interactive and responsive user interface.
+- **HTML**: For building an user interface.
 - **CSS**: For clean and intuitive styling.
+- **JS**: For the calculations and functions.
 
 ## Live Demo
 
